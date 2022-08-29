@@ -18,7 +18,7 @@ function App() {
   //all: 전체 complete: 완료 incomplete: 미완료 [박스 부분에 대한 코드]
   const [search, setSearch] = React.useState({
     text: "",
-    select: " all",
+    select: "all",
   });
 
   //검색 - 검색창에 대한 코드
@@ -33,6 +33,7 @@ function App() {
     //axios는 비동기 인데 동기로 바꾸기 위해서는 함수 앞에 async를 적어주고 axios앞에 await을 적어주면 된다
     //async, await은 짝꿍이다
     //async await : 이게 제일 간단하고 보기 쉬운 방법이다(callback, generator방법이 있는데 어렵다)
+    //const getData = () => {axios}라고 작성하고 사용하게 되면 아래 console.log의 안녕하세요가 먼저 실행된는 것을 볼 수 있다. 비동기
     await axios
       .get("https://jsonplaceholder.typicode.com/todos")
       .then((response) => {
